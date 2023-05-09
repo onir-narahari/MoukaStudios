@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nature Photos Gallery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&amp;display=swap" rel="stylesheet">
+<style>
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Arial;
+}
+
+.header {
+text-align: center;
+padding: 32px;
+}
+
+.row {
+display: -ms-flexbox; /* IE10 */
+display: flex;
+-ms-flex-wrap: wrap; /* IE10 */
+flex-wrap: wrap;
+padding: 0 8px;
+margin-left: 0px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+-ms-flex: 25%; /* IE10 */
+flex: 25%;
+max-width: 25%;
+padding: 0 4px;
+}
+
+.column img {
+margin-top: 8px;
+vertical-align: middle;
+width: 100%;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Pop-up content styles */
+.popup-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Pop-up image styles */
+.popup-content img {
+  max-width: 50%;
+  height: auto;
+  max-height:75%;
+  border-radius: 10px;
+}
+
+/* Pop-up order info styles */
+.popup-content p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+.column {
+  -ms-flex: 50%;
+  flex: 50%;
+  max-width: 50%;
+}
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+.column {
+  -ms-flex: 100%;
+  flex: 100%;
+  max-width: 100%;
+}
+}
+.navbar {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+padding: 10px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: transparent;
+z-index: 1;
+}
+
+.navbar h1 {
+font-size: 36px;
+font-weight: bold;
+margin: 0;
+color: black;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+font-family: 'Lato', sans-serif;
+}
+
+.navbar ul {
+display: flex;
+margin: 0;
+padding: 0;
+list-style: none;
+margin-right:80px;
+
+
+}
+
+.navbar ul li {
+margin: 0 30px;
+position: relative;
+}
+
+.navbar ul li:hover ul {
+display: block;
+}
+
+.navbar ul li a {
+display: block;
+font-size: 17px;
+font-weight: bold;
+color: black;
+text-decoration: none;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+transition: color 0.3s ease-in-out;
+font-family: 'Lato', sans-serif;
+
+}
+
+.navbar ul li a:hover {
+color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar ul li ul {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+padding: 5px;
+background-color: rgba(0, 0, 0, 0.8);
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul li ul li {
+display: block;
+margin: 10px 0;
+}
+
+.navbar ul li ul li a {
+font-size: 16px;
+font-weight: normal;
+color: white;
+text-shadow: none;
+transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li ul li a:hover {
+color: rgba(255, 255, 255, 0.8);
+}
+</style>
+</head>
+<body>
+  <div class="navbar">
+<h1>Mouka Studios</h1>
+<ul>
+  <li><a href="index.html">Home</a></li>
+<li>
+  <a href="#">Products</a>
+  <ul>
+    <li><a href="nature.html">Nature</a></li>
+    <li><a href="citylife.html">City Life</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="vehicles.html">Vehicles</a></li>
+  </ul>
+</li>
+
+<li><a href="resources.html">Resources</a></li>
+</ul>
+</div>
+<div class="header">
+<h1>Nature Photos</h1>
+</div>
+
+
+
+
+
+  <!-- Photo Grid -->
+  <div class="row">
+    <div class="column">
+      <img src="nature1.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature2.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature3.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature4.png" style="width:100%" onclick="showPopup(this.src)">
+
+
+
+    </div>
+    <div class="column">
+
+      <img src="nature8.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature9.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature10.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature5.png" style="width:100%" onclick="showPopup(this.src)">
+
+    </div>
+    <div class="column">
+      <img src="nature11.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature12.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature13.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature14.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature15.png" style="width:100%" onclick="showPopup(this.src)">
+
+    </div>
+    <div class="column">
+      <img src="nature16.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="travelnature1.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="travelnature2.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature6.png" style="width:100%" onclick="showPopup(this.src)">
+      <img src="nature7.png" style="width:100%" onclick="showPopup(this.src)">
+    </div>
+
+</div>
+
+<!-- Pop-up container -->
+<div class="popup" onclick="hidePopup()" style="display: hidden;">
+<div class="popup-content">
+<img id="popup-image" src="file:///Users/onirnarahari/Documents/PhotoWebsite/car1.png">
+<p>Email moukastudios@gmail.com for photo - $10 Dollars without watermark obviously. Can pay through Cash App, Pay Pal, or any other form. </p>
+</div>
+</div>
+
+<!-- Script for showing/hiding the pop-up -->
+<script>
+function showPopup(src) {
+document.getElementById("popup-image").src = src;
+document.querySelector(".popup").style.display = "flex";
+}
+
+function hidePopup() {
+document.querySelector(".popup").style.display = "none";
+}
+</script>
+
+
+
+</body>
+</html>

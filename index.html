@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mouka Studios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+<div class="banner">
+<img src="car1.png" class="active" />
+<img src="nature9.png"/>
+<img src="travel6.png"/>
+<img src="travelcity1.png"/>
+<button class="arrow left">&#8249;</button>
+<button class="arrow right">&#8250;</button>
+</div>
+
+<div class="navbar">
+<h1>Mouka Studios</h1>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li>
+
+<a href="#">Products</a>
+<ul>
+	<li><a href="nature.html">Nature</a></li>
+	<li><a href="citylife.html">City Life</a></li>
+	<li><a href="travel.html">Travel</a></li>
+	<li><a href="vehicles.html">Vehicles</a></li>
+</ul>
+</li>
+
+<li><a href="resources.html">Resources</a></li>
+</ul>
+</div>
+<div class="containerStory">
+
+  <h1 class="title">Based in Houston, Texas</h1>
+  <p class="story">At Mouka Studios, we believe that photography is more than just a job - it's a passion. Our journey started in 2020, with a small team of like-minded individuals who shared the same love for capturing the perfect moment. Today, we're proud to be one of Houston's most reputable photography companies, offering a range of services that cater to your every need.</p>
+</div>
+
+<div class="container">
+  <h1>See Our Work</h1>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="travelnature1.png" alt="Card 1">
+			<a href = "travel.html"class="view-all">View All Travel Photos</a>
+    </div>
+
+    <div class="card">
+      <img src="nature16.png" alt="Card 2">
+			<a href = "nature.html"class="view-all">View All Nature Photos</a>
+    </div>
+
+    <div class="card">
+      <img src="city5.png" alt="Card 3">
+      <a href = "citylife.html"class="view-all">View All City Photos</a>
+    </div>
+  </div>
+</div>
+<script>
+let currentImage = 0;
+const images = document.querySelectorAll('.banner img');
+const arrows = document.querySelectorAll('.banner .arrow');
+
+const showImage = index => {
+  if (index < 0) {
+    index = images.length - 1;
+  } else if (index >= images.length) {
+    index = 0;
+  }
+
+  images[currentImage].classList.remove('active');
+  images[index].classList.add('active');
+  currentImage = index;
+};
+
+const nextImage = () => {
+  showImage(currentImage + 1);
+};
+
+const prevImage = () => {
+  showImage(currentImage - 1);
+};
+
+arrows.forEach(arrow => {
+  arrow.addEventListener('click', () => {
+    if (arrow.classList.contains('left')) {
+      prevImage();
+    } else if (arrow.classList.contains('right')) {
+      nextImage();
+    }
+  });
+});
+
+setInterval(nextImage, 10000);
+</script>
+</body>
+</html>
